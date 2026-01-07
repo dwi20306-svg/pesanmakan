@@ -16,7 +16,7 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 
 ![User Page 1](psnmkn/dashboard%user.png)
 
-![User Page 2]psnmkn/menu%user.png)
+![User Page 2](psnmkn/menu%user.png)
 
 ![User Page 3](psnmkn/order%user.png)
 
