@@ -14,13 +14,13 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 
 ### 2. Role: User
 
-![User Page 1](psnmkn/dashboard user.png)
+![User Page 1](psnmkn/dashboard%user.png)
 
-![User Page 2]psnmkn/menu user.png)
+![User Page 2]psnmkn/menu%user.png)
 
-![User Page 3](psnmkn/order user.png)
+![User Page 3](psnmkn/order%user.png)
 
-![User Page 4](psnmkn/chat.user.png)
+![User Page 4](psnmkn/chat%user.png)
 
 User dapat melakukan beberapa fungsi, yaitu:
 
@@ -32,13 +32,13 @@ Melihat status pesanan
 ### 3. Role: Admin (Dashboard)
 Panel kendali utama untuk manajemen konten dan user.
 
-![Admin Page 1](psnmkn/dashboard admin.png)
+![Admin Page 1](psnmkn/dashboard%admin.png)
 
-![Admin Page 2](psnmkn/neworder admin.png)
+![Admin Page 2](psnmkn/neworder%admin.png)
 
-![Admin Page 3](psnmkn/kelola admin.png)
+![Admin Page 3](psnmkn/kelola%admin.png)
 
-![Admin Page 4](psnmkn/menu admin.png)
+![Admin Page 4](psnmkn/menu%admin.png)
 
 Admin  dapat melakukan beberapa fungsi, yaitu:
 
