@@ -5,47 +5,35 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 
 ---
 
-## 📸 Dokumentasi Antarmuka (Landing Page & Dashboard)
+## 📸 Dokumentasi Antarmuka
 
-### 1. login
-
-
-![Landing Page ](psnmkn/login.png)
+### 1. Halaman Login
+![Login Page](psnmkn/login.png)
 
 ### 2. Role: User
+User memiliki akses untuk berinteraksi dengan menu dan layanan.
+* ![User Dashboard](psnmkn/dashboard%20user.png)
+* ![User Menu](psnmkn/menu%20user.png)
+* ![User Order](psnmkn/order%20user.png)
+* ![User Chat](psnmkn/chat.user.png)
 
-![User Page 1](psnmkn/dashboard%user.png)
+**Fitur User:**
+* Menjelajahi daftar menu makanan dan minuman.
+* Melakukan pemesanan secara real-time.
+* Fitur Chat langsung ke Admin untuk konsultasi menu.
+* Tracking status pesanan.
 
-![User Page 2](psnmkn/menu%user.png)
+### 3. Role: Admin
+Panel kendali utama untuk operasional bisnis.
+* ![Admin Dashboard](psnmkn/dashboard%20admin.png)
+* ![Manage Orders](psnmkn/neworder%20admin.png)
+* ![Manage Content](psnmkn/kelola%20admin.png)
+* ![Menu Management](psnmkn/menu%20admin.png)
 
-![User Page 3](psnmkn/order%user.png)
-
-![User Page 4](psnmkn/chat%user.png)
-
-User dapat melakukan beberapa fungsi, yaitu:
-
-Melihat daftar menu makanan dan minuman
-Melakukan pemesanan makanan
-Mengirim pesan / chat untuk bertanya langsung ke admin (misalnya stok, harga, atau rekomendasi menu)
-Melihat status pesanan
-
-### 3. Role: Admin (Dashboard)
-Panel kendali utama untuk manajemen konten dan user.
-
-![Admin Page 1](psnmkn/dashboard%admin.png)
-
-![Admin Page 2](psnmkn/neworder%admin.png)
-
-![Admin Page 3](psnmkn/kelola%admin.png)
-
-![Admin Page 4](psnmkn/menu%admin.png)
-
-Admin  dapat melakukan beberapa fungsi, yaitu:
-
-Mengelola data menu (tambah, edit, hapus menu)
-Mengelola pesanan dari user
-Melihat dan membalas chat dari user
-Mengontrol alur pemesanan agar berjalan dengan lancar
+**Fitur Admin:**
+* Manajemen CRUD (Create, Read, Update, Delete) data menu.
+* Monitoring dan manajemen status pesanan user.
+* Sistem layanan pelanggan melalui chat.
 ---
 
 ---
