@@ -12,7 +12,7 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 
 ### 2. Role: User
 User memiliki akses untuk berinteraksi dengan menu dan layanan.
-* ![User Dashboard](psnmkn/dashboard%20user.png)
+* ![User Dashboard](psnmkn/dasboard%20user.png)
 * ![User Menu](psnmkn/menu%20user.png)
 * ![User Order](psnmkn/order%20user.png)
 * ![User Chat](psnmkn/chat.user.png)
