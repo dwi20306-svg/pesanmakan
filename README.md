@@ -25,7 +25,7 @@ User memiliki akses untuk berinteraksi dengan menu dan layanan.
 
 ### 3. Role: Admin
 Panel kendali utama untuk operasional bisnis.
-* ![Admin Dashboard](psnmkn/dashboard%20admin.png)
+* ![Admin Dashboard](psnmkn/dasboard%20admin.png)
 * ![Manage Orders](psnmkn/neworder%20admin.png)
 * ![Manage Content](psnmkn/kelola%20admin.png)
 * ![Menu Management](psnmkn/menu%20admin.png)
