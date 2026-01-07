@@ -5,18 +5,10 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 
 ---
 
-## 👥 Hak Akses (Roles)
-Aplikasi ini memiliki tiga hak akses utama dengan fungsi yang berbeda:
-1. **Public:** Masyarakat umum yang dapat menjelajahi katalog flora dan fauna.
-2. **user:** Kontributor yang memiliki akses untuk mengusulkan data flora atau fauna baru.
-3. **Admin Dashboard:** Pengelola sistem yang memiliki otoritas penuh untuk validasi data, kelola anggota, dan pengaturan sistem.
-
----
-
 ## 📸 Dokumentasi Antarmuka (Landing Page & Dashboard)
 
-### 1. Role: Public (Landing Page Utama)
-Halaman depan yang menampilkan katalog publik dan informasi umum BioSave.
+### 1. login
+
 
 ![Landing Page ](psnmkn/login.png)
 
