@@ -15,7 +15,7 @@ User memiliki akses untuk berinteraksi dengan menu dan layanan.
 * ![User Dashboard](psnmkn/dasboard%20user.png)
 * ![User Menu](psnmkn/menu%20user.png)
 * ![User Order](psnmkn/order%20user.png)
-* ![User Chat](psnmkn/chat.user.png)
+* ![User Chat](psnmkn/chat%20user.png)
 
 **Fitur User:**
 * Menjelajahi daftar menu makanan dan minuman.
