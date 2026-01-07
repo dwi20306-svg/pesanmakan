@@ -1,119 +1,63 @@
-{{-- resources/views/dashboard_admin/index.blade.php --}}
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NusaEat - Dashboard Admin</title>
+<x-admin-layout title="Dashboard">
 
-    {{-- CSS Laravel --}}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<h1 class="text-3xl font-semibold mb-8 text-gray-900">Dashboard</h1>
 
-    {{-- Font Awesome --}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!-- STATS -->
+<section class="grid grid-cols-3 gap-6 mb-12">
 
-    {{-- Google Fonts --}}
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
+<div class="bg-white rounded-xl p-6 shadow-sm border">
+  <p class="text-sm text-gray-500">New Order</p>
+  <p class="text-3xl font-bold">{{ $newOrder }}</p>
+</div>
 
-    <div class="container">
-        <aside class="sidebar">
-            <h1 class="logo">NusaEat</h1>
-            
-            <nav class="navigation">
-                <ul>
-                    <li>
-                        <a href="{{ url('/dashboard-admin') }}" class="nav-link active">
-                            <i class="fas fa-home"></i>
-                            <span>Dashboard</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/new-order') }}" class="nav-link">
-                            <i class="fas fa-bell"></i>
-                            <span>New Order</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/tambah-menu') }}" class="nav-link">
-                            <i class="fas fa-utensils"></i>
-                            <span>Tambah Menu</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+<div class="bg-white rounded-xl p-6 shadow-sm border">
+  <p class="text-sm text-gray-500">Total Order</p>
+  <p class="text-3xl font-bold">{{ $totalOrder }}</p>
+</div>
 
-        <main class="main-content">
-            <header class="content-header">
-                <h2>Dashboard</h2>
-            </header>
+<div class="bg-white rounded-xl p-6 shadow-sm border">
+  <p class="text-sm text-gray-500">Waiting List</p>
+  <p class="text-3xl font-bold">{{ $waitingList }}</p>
+</div>
 
-            <section class="stats-grid">
-                <div class="stat-card">
-                    <h3>New Order</h3>
-                    <p class="stat-number">50</p>
-                    <div class="icon-wrapper">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <h3>Total Order</h3>
-                    <p class="stat-number">102</p>
-                    <div class="icon-wrapper">
-                        <i class="fas fa-clipboard-check"></i>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <h3>Waiting List</h3>
-                    <p class="stat-number">10</p>
-                    <div class="icon-wrapper">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                </div>
-            </section>
+</section>
 
-            <section class="order-section">
-                <h3 class="order-list-header">Order List</h3>
-                <div class="order-container">
-                    <div class="search-bar">
-                        <input type="text" id="searchInput" placeholder="Search an order">
-                        <i class="fas fa-search"></i>
-                    </div>
+<!-- ORDER LIST -->
+<section>
+<h2 class="text-xl font-semibold mb-4 text-gray-900">Order List</h2>
 
-                    <ul class="order-list" id="orderList">
-                        <li class="order-item">
-                            <div class="initials nn">NN</div>
-                            <div class="order-details">
-                                <span class="customer-name">Naja Nela</span>
-                                <span class="order-count">3 pesanan</span>
-                            </div>
-                            <span class="status-badge status-selesai">Selesai</span>
-                        </li>
-                        <li class="order-item">
-                            <div class="initials ds">DS</div>
-                            <div class="order-details">
-                                <span class="customer-name">Dwi Sasta</span>
-                                <span class="order-count">2 pesanan</span>
-                            </div>
-                            <span class="status-badge status-proses">Proses</span>
-                        </li>
-                        <li class="order-item">
-                            <div class="initials cl">CL</div>
-                            <div class="order-details">
-                                <span class="customer-name">Ceci Lia</span>
-                                <span class="order-count">5 pesanan</span>
-                            </div>
-                            <span class="status-badge status-proses">Proses</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </main>
+<div class="bg-white rounded-xl p-6 shadow-sm border">
+
+<div class="space-y-4">
+
+@forelse($orders as $order)
+<div class="flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-sm font-semibold">
+      {{ strtoupper(substr($order->user->name,0,2)) }}
     </div>
+    <div>
+      <p class="font-medium text-gray-900">
+        {{ $order->user->name }}
+      </p>
+      <p class="text-xs text-gray-500">
+        {{ $order->total }} pesanan
+      </p>
+    </div>
+  </div>
 
-    {{-- JS Laravel --}}
-    <script src="{{ asset('js/script.js') }}"></script>
-</body>
-</html>
+  <span class="text-xs px-3 py-1 rounded-full bg-orange-100 text-orange-700">
+    aktif
+  </span>
+</div>
+@empty
+<p class="text-sm text-gray-500 text-center">
+  Belum ada pesanan
+</p>
+@endforelse
+
+</div>
+</div>
+</section>
+
+</x-admin-layout>

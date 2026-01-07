@@ -1,97 +1,57 @@
 <x-layout title="Order Menu - NusaEat">
 
-    <div class="flex min-h-screen bg-gray-100">
-        
-        {{-- Sidebar --}}
-        <aside class="w-64 bg-white shadow-md p-6">
-            <h1 class="text-2xl font-bold mb-8 tracking-wide text-orange-500">NusaEat</h1>
+<main class="p-10 space-y-10 max-w-4xl mx-auto">
 
-            <nav>
-                <ul class="space-y-4 text-gray-700">
-                    <li>
-                        <a href="{{ route('user.dashboard') }}" class="flex items-center gap-2 hover:text-orange-500">
-                            <i class="fas fa-home"></i> Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('profil') }}" class="flex items-center gap-2 hover:text-orange-500">
-                            <i class="fas fa-user"></i> Profil saya
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('order.menu') }}" class="flex items-center gap-2 text-orange-500 font-semibold">
-                            <i class="fas fa-receipt"></i> Order Menu
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('menu') }}" class="flex items-center gap-2 hover:text-orange-500">
-                            <i class="fas fa-utensils"></i> Menu
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
+    <h2 class="text-2xl font-semibold">Pesanan Anda</h2>
 
-        {{-- Main --}}
-        <main class="flex-1 p-10 space-y-10">
+    @if(empty($cart))
+        <p class="text-gray-500">Belum ada pesanan</p>
+    @else
 
-            {{-- Balance --}}
-            <section>
-                <h3 class="uppercase font-semibold text-gray-600 tracking-wider mb-4">Your Balance</h3>
-                <div class="bg-white p-6 rounded-xl shadow flex justify-between items-center">
-                    <div>
-                        <span class="text-gray-600 text-sm">Balance</span>
-                        <p class="text-2xl font-bold">Rp 500.000</p>
-                    </div>
-                    <div class="flex gap-6">
-                        <button class="flex flex-col items-center">
-                            <i class="fas fa-wallet text-xl"></i>
-                            <span class="text-sm">transfer</span>
-                        </button>
-                        <button class="flex flex-col items-center">
-                            <i class="fas fa-arrow-up-from-bracket text-xl"></i>
-                            <span class="text-sm">top up</span>
-                        </button>
-                    </div>
-                </div>
-            </section>
+    <div class="space-y-4">
+        @foreach($cart as $item)
+        <div class="flex items-center gap-5 bg-white rounded-2xl p-5 border shadow-sm">
 
-            {{-- Order List --}}
-            <section>
-                <h2 class="text-2xl font-bold uppercase tracking-wide mb-6">Order Menu</h2>
+            <img src="{{ asset('storage/'.$item['foto']) }}"
+                 class="w-20 h-20 rounded-xl object-cover">
 
-                {{-- Item --}}
-                <div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow mb-4">
-                    <img src="{{ asset('order/SOTO.jpeg') }}" class="w-20 h-20 rounded object-cover">
-                    <div>
-                        <h4 class="font-semibold capitalize">soto ayam medan</h4>
-                        <span>1 x</span>
-                        <p class="font-bold text-lg">Rp 25.000,00</p>
-                    </div>
-                </div>
+            <div class="flex-1">
+                <h4 class="font-medium">{{ $item['nama'] }}</h4>
+                <p class="text-sm text-gray-500">Qty: {{ $item['qty'] }}</p>
+            </div>
 
-                <div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow">
-                    <img src="{{ asset('order/Ayam_Woku.jpeg') }}" class="w-20 h-20 rounded object-cover">
-                    <div>
-                        <h4 class="font-semibold capitalize">ayam woku kemangi</h4>
-                        <span>1 x</span>
-                        <p class="font-bold text-lg">Rp 25.000,00</p>
-                    </div>
-                </div>
-            </section>
+            <div class="font-semibold">
+                Rp {{ number_format($item['harga'] * $item['qty'],0,',','.') }}
+            </div>
 
-            {{-- Total --}}
-            <section class="flex justify-between text-lg font-semibold">
-                <span>Total Pesanan</span>
-                <span>Rp 50.000,00</span>
-            </section>
+            <form action="{{ route('cart.remove', $item['id']) }}" method="POST">
+                @csrf
+                <button class="text-red-500 hover:text-red-700 text-sm">
+                    Hapus
+                </button>
+            </form>
 
-            {{-- Checkout --}}
-            <button class="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg text-lg font-semibold">
-                Check Out
-            </button>
-
-        </main>
+        </div>
+        @endforeach
     </div>
+
+    <div class="flex justify-between text-lg font-semibold border-t pt-6">
+        <span>Total</span>
+        <span>Rp {{ number_format($total,0,',','.') }}</span>
+    </div>
+
+<form action="{{ route('checkout') }}" method="POST">
+    @csrf
+    <button
+        type="submit"
+        class="w-full bg-primary hover:bg-orange-600
+               text-white py-4 rounded-2xl font-medium">
+        Checkout Pesanan
+    </button>
+</form>
+
+    @endif
+
+</main>
 
 </x-layout>

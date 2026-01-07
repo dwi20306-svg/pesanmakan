@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Menu extends Model
+{
+    protected $fillable = [
+        'nama_menu',
+        'kategori',
+        'harga',
+        'deskripsi',
+        'foto',
+        'is_active',
+        'status',
+    ];
+
+    public function carts()
+{
+    return $this->hasMany(Cart::class);
+}
+}
