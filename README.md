@@ -13,7 +13,6 @@ Proyek ini dirancang untuk mensimulasikan sistem pemesanan makanan modern, mulai
 ![Landing Page ](psnmkn/login.png)
 
 ### 2. Role: User
-Halaman khusus bagi kontributor untuk melakukan pengajuan data flora/fauna.
 
 ![User Page 1](psnmkn/dashboard user.png)
 
@@ -24,9 +23,11 @@ Halaman khusus bagi kontributor untuk melakukan pengajuan data flora/fauna.
 ![User Page 4](psnmkn/chat.user.png)
 
 User dapat melakukan beberapa fungsi, yaitu:
-* **Dashboard Kontributor:** Melihat statistik berapa banyak data yang sudah Anda ajukan.
-* **Riwayat Pengajuan:** Melacak apakah data Anda sudah disetujui (Approved) atau masih ditinjau (Pending).
-* **Edit Profil:** Memperbarui informasi biodata kontributor.
+
+Melihat daftar menu makanan dan minuman
+Melakukan pemesanan makanan
+Mengirim pesan / chat untuk bertanya langsung ke admin (misalnya stok, harga, atau rekomendasi menu)
+Melihat status pesanan
 
 ### 3. Role: Admin (Dashboard)
 Panel kendali utama untuk manajemen konten dan user.
@@ -39,6 +40,12 @@ Panel kendali utama untuk manajemen konten dan user.
 
 ![Admin Page 4](psnmkn/menu admin.png)
 
+Admin  dapat melakukan beberapa fungsi, yaitu:
+
+Mengelola data menu (tambah, edit, hapus menu)
+Mengelola pesanan dari user
+Melihat dan membalas chat dari user
+Mengontrol alur pemesanan agar berjalan dengan lancar
 ---
 
 ---
